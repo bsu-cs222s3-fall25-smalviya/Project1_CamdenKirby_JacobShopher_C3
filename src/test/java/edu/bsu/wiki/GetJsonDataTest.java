@@ -23,4 +23,26 @@ public class GetJsonDataTest {
         Assertions.assertEquals(expectedUrl, url.toString());
 
     }
+
+    @Test
+    void testRevisions() {
+        String pageTitle = "Zappa";
+        boolean testFail = true;
+
+        try {
+            URLConnection connection = GetJsonData.connectToWikipedia(pageTitle);
+            String jsonData = GetJsonData.readJsonAsStringFrom(connection);
+
+            // If JSON is not empty, then test passes
+            if (!jsonData.isEmpty()) {
+                testFail = false;
+            }
+        } catch (IOException e) {
+            Assertions.fail("Network Error");
+        } catch (URISyntaxException e) {
+            throw new RuntimeException(e);
+        }
+
+        Assertions.assertFalse(testFail, "Failed to retrieve JSON data.");
+    }
 }
