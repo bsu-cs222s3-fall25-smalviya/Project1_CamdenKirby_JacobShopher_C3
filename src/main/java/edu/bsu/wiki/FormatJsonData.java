@@ -26,6 +26,7 @@ public class FormatJsonData {
             return;
         }
 
+        // Revisions check
         JSONObject page = pages.getJSONObject(pageId);
         JSONArray revisions = page.optJSONArray("revisions");
 

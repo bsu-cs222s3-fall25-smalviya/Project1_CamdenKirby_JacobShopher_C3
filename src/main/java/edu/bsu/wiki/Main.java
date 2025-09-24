@@ -20,14 +20,11 @@ public class Main {
             String rawJsonData = GetJsonData.readJsonAsStringFrom(connection);
             FormatJsonData.printFormattedJson(rawJsonData);
 
-
         } catch (IOException e) {
             System.err.println("Error: Network Issue.");
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     public static String getPageTitle() {

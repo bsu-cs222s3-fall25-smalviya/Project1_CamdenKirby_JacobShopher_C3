@@ -9,7 +9,6 @@ import java.nio.charset.Charset;
 
 public class GetJsonData {
 
-
     public static URLConnection connectToWikipedia(String articleTitle) throws IOException, URISyntaxException {
         String encodedUrlString = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=" +
                 URLEncoder.encode(articleTitle, Charset.defaultCharset()) +
@@ -25,7 +24,4 @@ public class GetJsonData {
     public static String readJsonAsStringFrom(URLConnection connection) throws IOException {
         return new String(connection.getInputStream().readAllBytes(), Charset.defaultCharset());
     }
-
-
-
 }
