@@ -9,6 +9,7 @@ import java.nio.charset.Charset;
 
 public class GetJsonData {
 
+    // Connects to the Wikipedia API and retrieves raw JSON data for a given article
     public static URLConnection connectToWikipedia(String articleTitle) throws IOException, URISyntaxException {
         String encodedUrlString = "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=revisions&titles=" +
                 URLEncoder.encode(articleTitle, Charset.defaultCharset()) +
