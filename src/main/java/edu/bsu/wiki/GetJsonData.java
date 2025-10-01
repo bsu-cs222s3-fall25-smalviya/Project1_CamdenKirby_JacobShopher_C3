@@ -21,7 +21,7 @@ public class GetJsonData {
         connection.connect();
         return connection;
     }
-
+    // Reads the full JSON response from the Wikipedia connection as a string
     public static String readJsonAsStringFrom(URLConnection connection) throws IOException {
         return new String(connection.getInputStream().readAllBytes(), Charset.defaultCharset());
     }
